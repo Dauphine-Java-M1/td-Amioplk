@@ -1,0 +1,44 @@
+Amir Worms
+												TD MAVEN
+Exercice 1 :
+
+4. La version installée en salle crio est la version 3.6.0
+	Cette version est donc assez récente pour nos besoins.
+	
+5.	Le groupId permet d'identifier notre projet de manière unique parmi tous les projets existants. Il suit les mêmes règles/conventions que les noms de packages.
+	Les artifactId permettent de décider le nom du fichier .jar de notre projet en cours. Le nom est libre dans la mesure où nous sommes le créateur du projet.
+	
+6.	Le répertoire target contient (entre autres) les fichiers .class qui sont les fichiers "compilés" écrits en byteCode java. Par défaut, on retrouve App.class car nous n'avons créé aucune classe pour l'instant.
+
+8.	la commande -cp permet d'expliciter à l'exécution comme à la compilation le chemin relatif du répertoire où se trouvent respectivement le code source ou les .class
+Le class path est un paramètre utilisé par la JVM à cet effet.
+
+13. Cette propriété "maven.compiler.target" permet de configurer la version de Java utilisée pour l'exécution car il est spécifé "target"
+
+Exercice 2 :
+
+1.	Il s'affiche le message "aucun attribut manifest principal dans target/td00-1.0-SNAPSHOT.jar"
+Il faut donc que l'archive contienne un fichier manifeste.
+
+Exercice 3 :
+
+3. L'IDE nous propose une méthode usuelle void System.out.println(String str)
+
+4. L'IDE nous propose de créer une méthode String toString() pour cet objet.
+
+5. Idem sauf que la  méthode proposée est public static void main(String [] args)
+
+6. L'IDE nous propose de créer respectivement un getter ou un setter pour la variable toto de type primitif int
+
+7. L'IDE nous propose une interface pour renommer notre classe ou notre attribut et en cascade le nom du fichier, les constructeurs, les getters, les setters etc...
+
+													TD GIT
+													
+Exercice 1 :
+
+2. Les fichiers .java (dans main et dans test) ainsi que le pom.xml
+
+Exercice 2 :
+
+Voici les nouvelles modifications à push
+
