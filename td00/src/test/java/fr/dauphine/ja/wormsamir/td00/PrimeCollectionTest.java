@@ -28,11 +28,24 @@ public class PrimeCollectionTest
         return new TestSuite( PrimeCollectionTest.class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testPrimeCollection()
-    {
-        assertTrue( false );
+    public void testZeroIsPrime() {
+    	
+    	PrimeCollection p = new PrimeCollection();
+    	assertFalse( p.isPrime(0) );
+    
     }
+    
+    public void testTwoIsPrime() {
+    	
+    	PrimeCollection p = new PrimeCollection();
+    	assertTrue( p.isPrime(2) );
+    
+    }
+
+	public void testNineIsPrime() {
+	
+		PrimeCollection p = new PrimeCollection();
+		assertFalse( p.isPrime(9) );
+
+	}
 }

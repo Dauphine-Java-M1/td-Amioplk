@@ -28,7 +28,9 @@ public class PrimeCollection
 	
 	boolean isPrime(int p) 
 	{
-		for(int i=2; i<Math.sqrt(p) ;++i) 
+		if(p < 1) return false;
+		if(p == 1) return true;
+		for(int i=2; i<=Math.sqrt(p) ;++i) 
 		{
 			if(p%i == 0) return false;
 		}
