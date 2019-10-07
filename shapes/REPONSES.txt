@@ -1,0 +1,15 @@
+
+Exercice 1 : 
+
+	1. Cela fonctionne car la méthode main est dans la même classe que Point 
+		et a donc accès aux attributs privés x et y de l'instance p de Point
+		
+	2. La classe TestPoint n'étant pas la classe Point (évidemment) ou même une classe interne ou même une classe qui hérite de Point ou même dans le même package,
+		 elle n'a donc pas accès aux attributs privés de Point.
+		 On peut y remédier avec un getter (ou accesseur en français).
+		 
+	3. A priori s'il n'y a pas de bonne raison pour rendre des champs visibles, il faut les mettre en privé.
+	 	Cela permet de s'assurer que l'on contrôle les champs et qu'on restreind d'éventuelles modifications ou des actions qui ne sont pas en accord avec le comportement de notre classe.
+	 	
+	4. Un accesseur est une méthode publique associée a un champs privé d'une classe pour y accéder sous le contrôle du concepteur de cette classe.
+		
