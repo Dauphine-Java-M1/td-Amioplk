@@ -31,4 +31,6 @@ Exercice 2 :
 	
 Exercice 3 :
 
-	1. 
+	2. Eclipse va lever pendant l'exécution une exception d'indice hors des limites 
+	
+	3. 
