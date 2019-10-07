@@ -12,4 +12,14 @@ Exercice 1 :
 	 	Cela permet de s'assurer que l'on contrôle les champs et qu'on restreind d'éventuelles modifications ou des actions qui ne sont pas en accord avec le comportement de notre classe.
 	 	
 	4. Un accesseur est une méthode publique associée a un champs privé d'une classe pour y accéder sous le contrôle du concepteur de cette classe.
+		Oui c'est pertinent de créer des accesseurs ici.
 		
+	5. Notre projet ne compile plus car on fait appel au constructeur par défaut qui n'est plus disponible dès lors qu'on spécifie un constructeur avec des paramètres.
+	
+	6. Nous avons une collision/ un conflit de noms. Il nous faut spécifier le x qui est en argument et le x qui est attribut de l'instance actuelle avec le mot clé this.
+	
+	7. On peut créer un champs statique (commun à toutes les instances de la classe Point) qui serait incrémenté à chaque appel aux différents constructeurs.
+	
+	8. Le constructeur sait quel constructeur appeler car les constructeurs ont des paramètres différents.
+	
+	9. 
