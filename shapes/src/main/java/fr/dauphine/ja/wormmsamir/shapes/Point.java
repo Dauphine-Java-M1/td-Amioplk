@@ -1,5 +1,7 @@
 package fr.dauphine.ja.wormmsamir.shapes;
 
+import java.util.ArrayList;
+
 /**
  * Class of a point in 2D
  */
@@ -32,6 +34,15 @@ public class Point {
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if(! (o instanceof Point)) return false;
+		
+		Point p = (Point) o;
+		
+		return this.getX() == p.getX() && this.getY() == p.getY();
+	}
+	
+	@Override
 	public String toString() {
 		return "(" + Integer.toString(getX()) + "," + Integer.toString(getY()) + ")";
 	}
@@ -40,6 +51,17 @@ public class Point {
 		Point p = new Point();
 		System.out.println(p.x + " " + p.y);
 		System.out.println(p);
+		
+		Point p1 = new Point(1, 2);
+		Point p2 = p1;
+		Point p3 = new Point(1, 2);
+		
+		ArrayList<Point> list = new ArrayList<>();
+		list.add(p1);
+		System.out.println(p1 == p2);
+		System.out.println(p1 == p3);
+		System.out.println(list.indexOf(p2));
+		System.out.println(list.indexOf(p3));
 	}
 
 	public static int getNbPoints() {

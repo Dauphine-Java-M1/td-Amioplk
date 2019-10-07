@@ -22,4 +22,13 @@ Exercice 1 :
 	
 	8. Le constructeur sait quel constructeur appeler car les constructeurs ont des paramètres différents.
 	
-	9. 
+Exercice 2 :
+
+	1. Ce code affiche vrai puis faux car p2 fait référence au même objet que p1 alors que p3 fait référence à un autre objet.
+		L'opérateur == ne connait pas notre classe Point et donc ne peut pas deviner la signification sémentique de notre Point.
+		
+	3. "index i such that (o==null ? get(i)==null : o.equals(get(i)))" donc il nous faut override la méthode equals.
+	
+Exercice 3 :
+
+	1. 
