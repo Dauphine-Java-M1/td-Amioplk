@@ -11,14 +11,6 @@ public class Point {
 	private int y;
 	private static int nbPoints = 0;
 
-	public int getX() {
-		return x;
-	}
-
-	public int getY() {
-		return y;
-	}
-
 	public Point() {
 		this(0, 0);
 	}
@@ -32,7 +24,23 @@ public class Point {
 	public Point(Point p) {
 		this(p.getX(), p.getY());
 	}
+	
+	public int getX() {
+		return x;
+	}
 
+	public int getY() {
+		return y;
+	}
+
+	private void setX(int dx) {
+		this.x = dx;
+	}
+	
+	private void setY(int dy) {
+		this.y = dy;
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if(! (o instanceof Point)) return false;
@@ -45,6 +53,15 @@ public class Point {
 	@Override
 	public String toString() {
 		return "(" + Integer.toString(getX()) + "," + Integer.toString(getY()) + ")";
+	}
+	
+	public void translate(int dx, int dy) {
+		this.setX(dx);
+		this.setY(dy);
+	}
+	
+	public void translate(Point p) {
+		
 	}
 
 	public static void main(String[] args) {

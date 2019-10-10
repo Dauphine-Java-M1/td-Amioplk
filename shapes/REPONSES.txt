@@ -38,3 +38,7 @@ Exercice 3 :
 	6. Point capacity ne sert plus à rien car on peut ajouter des points indéfiniement.
 	
 Exercice 4 : 
+
+	1. On pourrait lui donner deux entiers ou un point existant par exemple.
+	
+	2. 
