@@ -30,6 +30,16 @@ public class BrokenLine {
 	}
 	
 	/**
+	 * @param point
+	 * Adds point to the BrokenLine ; is more reliable than method add(Point)
+	 */
+	public void addWithNbPoints(Point point) {
+		
+		if(this.nbPoints() == pointCapacity()) throw new IllegalStateException("BrokenLine is full");
+		else points[nbPoints()] = point;
+	}
+	
+	/**
 	 * @param point must not be null
 	 * @return true if this broken line contains point
 	 */

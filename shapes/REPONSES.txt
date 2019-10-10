@@ -31,6 +31,10 @@ Exercice 2 :
 	
 Exercice 3 :
 
-	2. Eclipse va lever pendant l'exÃ©cution une exception d'indice hors des limites 
+	2. Eclipse va lever pendant l'exÃ©cution une exception d'indice hors des limites.
 	
 	5. Eclipse lève une NullPointerException à l'exécution car on essaie d'exécuter null.equals(o);
+	
+	6. Point capacity ne sert plus à rien car on peut ajouter des points indéfiniement.
+	
+Exercice 4 : 
