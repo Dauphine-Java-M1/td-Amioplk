@@ -1,4 +1,4 @@
-package fr.dauphine.ja.wormmsamir.shapes;
+package fr.dauphine.ja.wormsamir.shapes;
 
 /**
  * Unit test for simple Point.

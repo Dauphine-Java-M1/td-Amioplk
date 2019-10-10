@@ -33,4 +33,4 @@ Exercice 3 :
 
 	2. Eclipse va lever pendant l'exÃ©cution une exception d'indice hors des limites 
 	
-	3. 
+	5. Eclipse lève une NullPointerException à l'exécution car on essaie d'exécuter null.equals(o);
