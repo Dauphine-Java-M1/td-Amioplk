@@ -39,6 +39,8 @@ Exercice 3 :
 	
 Exercice 4 : 
 
-	1. On pourrait lui donner deux entiers ou un point existant par exemple.
+	1. On pourrait lui donner deux entiers ou un point existant en retrounant void et l'équivalent en retournant un Point.
 	
-	2. 
+	2. c.center et c2.center font référence au même objet qui est mutable, il faut donc adopter un comportement immutable de copie des objets.
+	
+	3. Le comportement est illogique, il est permi à l'utilisateur de modifier le centre sans avoir accès à une méthode setCenter();
