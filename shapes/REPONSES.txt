@@ -31,16 +31,29 @@ Exercice 2 :
 	
 Exercice 3 :
 
-	2. Eclipse va lever pendant l'exÃ©cution une exception d'indice hors des limites.
+	2. La JVM va lever pendant l'exÃ©cution une exception d'indice hors des limites.
 	
-	5. Eclipse lève une NullPointerException à l'exécution car on essaie d'exécuter null.equals(o);
+	5. La JVM lï¿½ve une NullPointerException ï¿½ l'exï¿½cution car on essaie d'exï¿½cuter null.equals(o);
 	
-	6. Point capacity ne sert plus à rien car on peut ajouter des points indéfiniement.
+	6. Point capacity ne sert plus ï¿½ rien car on peut ajouter des points indï¿½finiement.
 	
 Exercice 4 : 
 
-	1. On pourrait lui donner deux entiers ou un point existant en retrounant void et l'équivalent en retournant un Point.
+	1. On pourrait lui donner deux entiers ou un point existant en retrounant void et l'ï¿½quivalent en retournant un Point.
 	
-	2. c.center et c2.center font référence au même objet qui est mutable, il faut donc adopter un comportement immutable de copie des objets.
+	2. c.center et c2.center font rï¿½fï¿½rence au mï¿½me objet qui est mutable, il faut donc adopter un comportement immutable de copie des objets.
 	
-	3. Le comportement est illogique, il est permi à l'utilisateur de modifier le centre sans avoir accès à une méthode setCenter();
+	3. Le comportement est illogique, il est permi ï¿½ l'utilisateur de modifier le centre sans avoir accï¿½s ï¿½ une mï¿½thode setCenter();
+	
+	5. Il faut en faire une mÃ©thode statique car rien n'exploite les propriÃ©tÃ©s de l'objet appelant.
+	
+Exercice 5 :
+
+	1. L'hÃ©ritage ne parraÃ®t pas intÃ©ressant ici car l'anneau les attributs sont privÃ©s (et donc pas hÃ©ritÃ©s) et de plus il faudrait rÃ©implÃ©menter toutes les mÃ©thodes dÃ©finies pour Circle (ex : surface et contains)
+	De plus, conceptuellement, un anneau n'est pas vraiment un cercle.
+	De plus, si une fonctionnalitÃ© est ajoutÃ©e Ã  un cercle, il faut avoir le soucis de vÃ©rifier ce que Ã§a implique pour les anneaux.
+	Un autre arguement serait que nous serions obligÃ©s de relaxer la visibilitÃ© des attributs.
+	
+	4. Etant donnÃ© que nous avons optÃ© pour ne pas hÃ©riter de Circle, le syso va afficher une reprÃ©sentation de notre anneau qui lui est propre.
+	
+	

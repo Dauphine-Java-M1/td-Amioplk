@@ -6,11 +6,11 @@ public class BrokenLine {
 	
 	private Point [] points;
 	
-	public BrokenLine(int n) {
+	public BrokenLine(int nbPoints) {
 		
-		if(n <= 0) throw new IllegalArgumentException();
+		if(nbPoints <= 0) throw new IllegalArgumentException();
 		
-		this.points = new Point [n];
+		this.points = new Point [nbPoints];
 	}
 	
 	/**

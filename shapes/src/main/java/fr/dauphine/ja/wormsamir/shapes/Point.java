@@ -33,14 +33,6 @@ public class Point {
 		return y;
 	}
 
-	private void setX(int dx) {
-		this.x = dx;
-	}
-	
-	private void setY(int dy) {
-		this.y = dy;
-	}
-	
 	@Override
 	public boolean equals(Object o) {
 		if(! (o instanceof Point)) return false;
@@ -55,13 +47,12 @@ public class Point {
 		return "(" + Integer.toString(getX()) + "," + Integer.toString(getY()) + ")";
 	}
 	
-	public void translate(int dx, int dy) {
-		this.setX(dx);
-		this.setY(dy);
+	public Point translate(int dx, int dy) {
+		return new Point(getX() + dx, getY() + dy);
 	}
 	
-	public void translate(Point p) {
-		
+	public double scalarProduct(Point point) {
+		return Math.pow(point.getX() - getX(), 2) + Math.pow(point.getY() - getY(), 2);
 	}
 
 	public static void main(String[] args) {

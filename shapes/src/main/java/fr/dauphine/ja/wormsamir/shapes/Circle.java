@@ -3,43 +3,46 @@ package fr.dauphine.ja.wormsamir.shapes;
 public class Circle {
 
 	private Point center;
-	private int radius;
+	private double radius;
 
-	public Circle(Point c, int r) {
+	public Circle(Point c, double r) {
 		this.center = new Point(c);
-		this.setRadius(r);
+		this.radius = r;
 	}
 
 	public double surface() {
-		return 2 * Math.PI * getRadius();
+		return Math.PI * getRadius() * getRadius();
 	}
 
 	public boolean contains(Point point) {
-		return (point.getX() - center.getX()) * (point.getX() - center.getX())
-				+ (point.getY() - center.getY()) * (point.getY() - center.getY()) 
-					>= getRadius() * getRadius();
+		return center.scalarProduct(point) <= Math.pow(getRadius(), 2);
 	}
 	
-	public boolean contains(Point point) {
+	public static boolean contains(Point point, Circle... circles) {
 		
+		for(Circle c : circles) {
+			if(c.contains(point)) return true;
+		}
+		
+		return false;
 	}
 
-	public void translate(int dx, int dy) {
-		this.center = new Point(dx, dy);
+	public Circle translate(int dx, int dy) {
+		return new Circle(getCenter().translate(dx, dy), getRadius());
 	}
 
 	@Override
 	public String toString() {
-		return "( x - " + center.getX() + " )² + ( y - " + center.getY() + " )² = " + (getRadius() * getRadius())
+		return "( x - " + center.getX() + " )ï¿½ + ( y - " + center.getY() + " )ï¿½ = " + (getRadius() * getRadius())
 				+ " Surface : " + surface();
 	}
 
-	public int getRadius() {
-		return radius;
+	public Point getCenter() {
+		return center;
 	}
-
-	public void setRadius(int radius) {
-		this.radius = radius;
+	
+	public double getRadius() {
+		return radius;
 	}
 
 }
