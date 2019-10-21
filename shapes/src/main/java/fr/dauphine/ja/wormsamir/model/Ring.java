@@ -1,5 +1,7 @@
 package fr.dauphine.ja.wormsamir.model;
 
+import fr.dauphine.ja.wormsamir.view.RingDrawer;
+
 public class Ring extends Shape {
 
 	private Circle outsideCircle;
@@ -11,6 +13,8 @@ public class Ring extends Shape {
 		
 		this.outsideCircle = new Circle(c, r);
 		this.insideRadius = ri;
+		
+		d = new RingDrawer(this);
 	}
 	
 	@Override

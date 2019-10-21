@@ -1,5 +1,7 @@
 package fr.dauphine.ja.wormsamir.model;
 
+import fr.dauphine.ja.wormsamir.view.CircleDrawer;
+
 public class Circle extends Shape {
 
 	private Point center;
@@ -8,6 +10,7 @@ public class Circle extends Shape {
 	public Circle(Point c, double r) {
 		this.center = new Point(c);
 		this.radius = r;
+		d = new CircleDrawer(this);
 	}
 
 	public double surface() {
