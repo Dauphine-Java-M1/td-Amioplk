@@ -17,6 +17,19 @@ public class Ring extends Shape {
 		d = new RingDrawer(this);
 	}
 	
+	/**
+	 * I chose to make a factory method because we cannot call a constructor after the first statement
+	 * 
+	 * @param inner
+	 * @param outter
+	 * @return a Ring object representing a ring with inner as its inner Circle and outter as its outter Circle
+	 */
+	public Ring factoryRingFromCircles(Circle inner, Circle outter) {
+		if(!inner.getCenter().equals(outter.getCenter())) throw new IllegalArgumentException();
+		
+		return new Ring(inner.getCenter(), outter.getRadius(), inner.getRadius());
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if(!(o instanceof Ring)) return false;
