@@ -7,8 +7,6 @@ import java.util.LinkedList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import com.sun.tools.javac.util.List;
-
 import fr.dauphine.ja.wormsamir.model.BrokenLineModern;
 import fr.dauphine.ja.wormsamir.model.Circle;
 import fr.dauphine.ja.wormsamir.model.Point;
@@ -34,17 +32,20 @@ public class MyDisplay extends JPanel {
 		
 	}
 	
-	@SuppressWarnings({ "restriction", "restriction" })
 	public static void main(String[] args) {
 		
 		World w = new World();
 		w.shapes.add(new Point(400, 100));
 		w.shapes.add(new Circle(new Point(400, 100), 100));
-		w.shapes.add(new BrokenLineModern(new LinkedList<Point>(List.of(new Point(0,0), new Point(100,100), new Point(200,300)))));
+		LinkedList<Point> l = new LinkedList<>();
+		l.add(new Point(0,0));
+		l.add(new Point(100,100));
+		l.add(new Point(200,300));
+		w.shapes.add(new BrokenLineModern(l));
 		w.shapes.add(new Ring(new Point(200,300), 100, 50));
 		
 		JFrame frame = new JFrame("Java Avancé - Graphic Display");
-		frame.setSize(new Dimension(500, 500));
+		frame.setSize(new Dimension(1000, 1000));
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
