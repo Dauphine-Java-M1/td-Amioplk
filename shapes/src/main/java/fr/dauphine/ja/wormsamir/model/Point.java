@@ -2,6 +2,8 @@ package fr.dauphine.ja.wormsamir.model;
 
 import java.util.ArrayList;
 
+import fr.dauphine.ja.wormsamir.view.PointDrawer;
+
 /**
  * Class of a point in 2D
  */
@@ -18,7 +20,8 @@ public class Point extends Shape {
 	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
-		setNbPoints(getNbPoints() + 1);
+		nbPoints = nbPoints + 1;
+		d = new PointDrawer(this);
 	}
 
 	public Point(Point p) {
