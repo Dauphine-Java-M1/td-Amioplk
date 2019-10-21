@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Class of a point in 2D
  */
-public class Point {
+public class Point extends Shape {
 
 	private int x;
 	private int y;
