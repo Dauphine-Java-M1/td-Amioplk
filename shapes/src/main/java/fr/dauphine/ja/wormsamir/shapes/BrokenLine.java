@@ -2,6 +2,8 @@ package fr.dauphine.ja.wormsamir.shapes;
 
 import java.util.Objects;
 
+import fr.dauphine.ja.wormsamir.model.Point;
+
 public class BrokenLine {
 	
 	private Point [] points;

@@ -1,6 +1,6 @@
-package fr.dauphine.ja.wormsamir.shapes;
+package fr.dauphine.ja.wormsamir.model;
 
-public class Ring {
+public class Ring extends Shape {
 
 	private Circle outsideCircle;
 	private double insideRadius;

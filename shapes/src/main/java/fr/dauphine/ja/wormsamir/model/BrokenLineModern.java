@@ -1,8 +1,8 @@
-package fr.dauphine.ja.wormsamir.shapes;
+package fr.dauphine.ja.wormsamir.model;
 
 import java.util.LinkedList;
 
-public class BrokenLineModern {
+public class BrokenLineModern extends Shape {
 
 	private LinkedList<Point> points;
 	

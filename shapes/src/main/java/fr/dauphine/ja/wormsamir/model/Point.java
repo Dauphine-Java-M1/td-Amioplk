@@ -1,4 +1,4 @@
-package fr.dauphine.ja.wormsamir.shapes;
+package fr.dauphine.ja.wormsamir.model;
 
 import java.util.ArrayList;
 

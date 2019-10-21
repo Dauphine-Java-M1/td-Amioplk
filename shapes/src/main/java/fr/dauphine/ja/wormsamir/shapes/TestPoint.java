@@ -1,5 +1,7 @@
 package fr.dauphine.ja.wormsamir.shapes;
 
+import fr.dauphine.ja.wormsamir.model.Point;
+
 /**
  * Unit test for simple Point.
  */

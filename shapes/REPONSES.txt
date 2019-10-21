@@ -1,4 +1,4 @@
-
+					td01
 Exercice 1 : 
 
 	1. Cela fonctionne car la méthode main est dans la même classe que Point 
@@ -56,4 +56,12 @@ Exercice 5 :
 	
 	4. Etant donné que nous avons opté pour ne pas hériter de Circle, le syso va afficher une représentation de notre anneau qui lui est propre.
 	
+			td02 : MVC
+		
+Exercice 1 :
+
+	5. Au moment où le JFrame est fermé ?
+
+	6. awt permet de mettre en place des interfaces utilisateurs pour manipuler des components et swing va plutôt fournir différents components
 	
+Exercice 2 :

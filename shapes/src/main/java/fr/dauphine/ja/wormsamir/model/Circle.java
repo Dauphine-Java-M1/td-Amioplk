@@ -1,6 +1,6 @@
-package fr.dauphine.ja.wormsamir.shapes;
+package fr.dauphine.ja.wormsamir.model;
 
-public class Circle {
+public class Circle extends Shape {
 
 	private Point center;
 	private double radius;
