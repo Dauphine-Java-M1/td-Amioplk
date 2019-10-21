@@ -5,5 +5,6 @@ import fr.dauphine.ja.wormsamir.view.Drawer;
 public abstract class Shape {
 	
 	public Drawer d;
+	public abstract boolean contains(Point p);
 	
 }

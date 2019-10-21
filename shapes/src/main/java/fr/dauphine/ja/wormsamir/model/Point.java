@@ -83,4 +83,9 @@ public class Point extends Shape {
 		Point.nbPoints = nbPoints;
 	}
 
+	@Override
+	public boolean contains(Point p) {
+		return this.equals(p);
+	}
+
 }
