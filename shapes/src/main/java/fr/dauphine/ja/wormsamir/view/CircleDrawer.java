@@ -3,19 +3,13 @@ package fr.dauphine.ja.wormsamir.view;
 import java.awt.Graphics;
 
 import fr.dauphine.ja.wormsamir.model.Circle;
-import fr.dauphine.ja.wormsamir.model.Shape;
 
-public class CircleDrawer implements Drawer {
+public class CircleDrawer extends Drawer {
 
 	private Circle shapeToDraw;
 
 	public CircleDrawer(Circle c) {
 		shapeToDraw = c;
-	}
-
-	@Override
-	public Shape getShapeToDraw() {
-		return shapeToDraw;
 	}
 
 	@Override

@@ -4,11 +4,9 @@ import java.awt.Graphics;
 
 import fr.dauphine.ja.wormsamir.model.Circle;
 import fr.dauphine.ja.wormsamir.model.Ring;
-import fr.dauphine.ja.wormsamir.model.Shape;
 
-public class RingDrawer implements Drawer {
+public class RingDrawer extends Drawer {
 
-	private Ring shapeToDraw;
 	private CircleDrawer innerCircleDrawer;
 	private CircleDrawer outterCircleDrawer;
 	
@@ -16,11 +14,6 @@ public class RingDrawer implements Drawer {
 		shapeToDraw = ring;
 		innerCircleDrawer = new CircleDrawer(new Circle(ring.getOutsideCircle().getCenter(), ring.getInsideRadius()));
 		outterCircleDrawer = new CircleDrawer(ring.getOutsideCircle());
-	}
-
-	@Override
-	public Shape getShapeToDraw() {
-		return shapeToDraw;
 	}
 
 	@Override

@@ -4,9 +4,9 @@ import java.awt.Graphics;
 
 import fr.dauphine.ja.wormsamir.model.Shape;
 
-public interface Drawer {
+public abstract class Drawer {
 
-	public Shape getShapeToDraw();
-	public void draw(Graphics g);
+	Shape shapeToDraw;
+	public abstract void draw(Graphics g);
 	
 }
