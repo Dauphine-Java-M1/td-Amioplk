@@ -24,7 +24,7 @@ public class BrokenLineDrawer extends Drawer {
 			leftPoint = rightPoint;
 			rightPoint = p;
 			
-			if(!firstPoint) g.drawLine(leftPoint.getX(), leftPoint.getY(), rightPoint.getX(), rightPoint.getY());
+			if(!firstPoint) g.drawLine((int)leftPoint.getX(), (int)leftPoint.getY(), (int)rightPoint.getX(), (int)rightPoint.getY());
 			firstPoint = false;
 		}
 		

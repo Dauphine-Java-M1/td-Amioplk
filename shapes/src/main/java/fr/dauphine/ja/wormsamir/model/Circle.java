@@ -1,8 +1,9 @@
 package fr.dauphine.ja.wormsamir.model;
 
 import fr.dauphine.ja.wormsamir.view.CircleDrawer;
+import fr.dauphine.ja.wormsamir.view.Drawer;
 
-public class Circle extends Shape {
+public class Circle implements Shape {
 
 	private Point center;
 	private double radius;
@@ -10,7 +11,6 @@ public class Circle extends Shape {
 	public Circle(Point c, double r) {
 		this.center = new Point(c);
 		this.radius = r;
-		d = new CircleDrawer(this);
 	}
 
 	public double surface() {
@@ -18,7 +18,7 @@ public class Circle extends Shape {
 	}
 
 	public boolean contains(Point point) {
-		return center.scalarProduct(point) <= Math.pow(getRadius(), 2);
+		return center.norm2(point) <= Math.pow(getRadius(), 2);
 	}
 	
 	public static boolean contains(Point point, Circle... circles) {
@@ -46,6 +46,11 @@ public class Circle extends Shape {
 	
 	public double getRadius() {
 		return radius;
+	}
+
+	@Override
+	public Drawer getDrawer() {
+		return new CircleDrawer(this);
 	}
 
 }

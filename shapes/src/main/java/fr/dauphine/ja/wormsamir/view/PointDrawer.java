@@ -14,8 +14,8 @@ public class PointDrawer extends Drawer {
 
 	@Override
 	public void draw(Graphics g) {
-		g.drawLine(shapeToDraw.getX(), shapeToDraw.getY()
-					, shapeToDraw.getX(), shapeToDraw.getY());
+		g.drawLine((int)shapeToDraw.getX(), (int)shapeToDraw.getY()
+					, (int)shapeToDraw.getX(), (int)shapeToDraw.getY());
 	}
 
 }

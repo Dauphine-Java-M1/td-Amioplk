@@ -1,8 +1,9 @@
 package fr.dauphine.ja.wormsamir.model;
 
+import fr.dauphine.ja.wormsamir.view.Drawer;
 import fr.dauphine.ja.wormsamir.view.RingDrawer;
 
-public class Ring extends Shape {
+public class Ring implements Shape {
 
 	private Circle outsideCircle;
 	private double insideRadius;
@@ -13,8 +14,6 @@ public class Ring extends Shape {
 		
 		this.outsideCircle = new Circle(c, r);
 		this.insideRadius = ri;
-		
-		d = new RingDrawer(this);
 	}
 	
 	/**
@@ -44,7 +43,7 @@ public class Ring extends Shape {
 	}
 	
 	public boolean contains(Point point) {
-		double sp = outsideCircle.getCenter().scalarProduct(point);
+		double sp = outsideCircle.getCenter().norm2(point);
 		
 		return outsideCircle.contains(point) && sp >= Math.pow(insideRadius, 2);
 	}
@@ -69,6 +68,11 @@ public class Ring extends Shape {
 	public static void main(String[] args) {
 		Ring r = new Ring(new Point(1,2), 5, 2);
 		System.out.println(r);
+	}
+
+	@Override
+	public Drawer getDrawer() {
+		return new RingDrawer(this);
 	}
 	
 }

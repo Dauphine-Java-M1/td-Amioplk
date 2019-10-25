@@ -15,8 +15,8 @@ public class CircleDrawer extends Drawer {
 	@Override
 	public void draw(Graphics g) {
 		
-		int x = shapeToDraw.getCenter().getX();
-		int y = shapeToDraw.getCenter().getY();
+		int x = (int)shapeToDraw.getCenter().getX();
+		int y = (int)shapeToDraw.getCenter().getY();
 		double r = shapeToDraw.getRadius();
 		g.drawOval((int) (x - r) , (int) (y - r), (int) r*2, (int) r*2);
 	}

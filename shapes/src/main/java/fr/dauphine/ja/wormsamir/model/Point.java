@@ -2,37 +2,37 @@ package fr.dauphine.ja.wormsamir.model;
 
 import java.util.ArrayList;
 
+import fr.dauphine.ja.wormsamir.view.Drawer;
 import fr.dauphine.ja.wormsamir.view.PointDrawer;
 
 /**
  * Class of a point in 2D
  */
-public class Point extends Shape {
+public class Point implements Shape {
 
-	private int x;
-	private int y;
+	private double x;
+	private double y;
 	private static int nbPoints = 0;
 
 	public Point() {
 		this(0, 0);
 	}
 
-	public Point(int x, int y) {
+	public Point(double x, double y) {
 		this.x = x;
 		this.y = y;
 		nbPoints = nbPoints + 1;
-		d = new PointDrawer(this);
 	}
 
 	public Point(Point p) {
 		this(p.getX(), p.getY());
 	}
 	
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
@@ -47,15 +47,23 @@ public class Point extends Shape {
 	
 	@Override
 	public String toString() {
-		return "(" + Integer.toString(getX()) + "," + Integer.toString(getY()) + ")";
+		return "(" + Double.toString(getX()) + "," + Double.toString(getY()) + ")";
 	}
 	
 	public Point translate(int dx, int dy) {
 		return new Point(getX() + dx, getY() + dy);
 	}
 	
-	public double scalarProduct(Point point) {
+	public double norm2(Point point) {
 		return Math.pow(point.getX() - getX(), 2) + Math.pow(point.getY() - getY(), 2);
+	}
+	
+	public double scalarProduct(Point point) {
+		return x * point.getX() + y * point.getY(); 
+	}
+	
+	static public Point getVectorAB(Point a, Point b) {
+		return new Point(b.x - a.x ,b.y - a.y);
 	}
 
 	public static void main(String[] args) {
@@ -86,6 +94,11 @@ public class Point extends Shape {
 	@Override
 	public boolean contains(Point p) {
 		return this.equals(p);
+	}
+
+	@Override
+	public Drawer getDrawer() {
+		return new PointDrawer(this);
 	}
 
 }
