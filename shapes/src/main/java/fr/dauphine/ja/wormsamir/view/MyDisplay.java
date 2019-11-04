@@ -64,11 +64,12 @@ public class MyDisplay extends JPanel {
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		MouseController mc = new MouseController(w);
-		frame.addMouseMotionListener(mc);
-		
 		MyDisplay d = new MyDisplay(w);
 		frame.add(d);
+	
+		MouseController mc = new MouseController(w, d);
+		frame.addMouseMotionListener(mc);
+		
 	}
 	
 }

@@ -32,6 +32,7 @@ public class Circle implements Shape {
 
 	public void translate(int x, int y) {
 		center.translate(x, y);
+		System.out.println("Je translate*");
 	}
 
 	@Override
