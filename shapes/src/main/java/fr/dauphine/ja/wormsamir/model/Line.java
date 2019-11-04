@@ -10,9 +10,32 @@ public class Line implements Shape {
 	private double accuracy;
 	
 	public Line(Point a, Point b) {
+		
+		if(a == null || b == null) {
+			throw new NullPointerException();
+		}
+		
 		this.setA(a);
 		this.setB(b);
 		accuracy = 0.001;
+	}
+	
+	public boolean isAbove(Point p) {
+		double a = B.getY() - A.getY();
+		double b = - (B.getX() - A.getX());
+		double bound = a * A.getX() + b * A.getY();
+		
+		System.out.println(bound + " - (" + a + "*" + p.getX() + b + "*" + p.getY() + ") :" + (bound - (a * p.getX() + b * p.getY())));
+		return bound - (a * p.getX() + b * p.getY()) < accuracy;
+	}
+	
+	public boolean isUnder(Point p) {
+		double a = B.getY() - A.getY();
+		double b = - (B.getX() - A.getX());
+		double bound = a * A.getX() + b * A.getY();
+		
+		System.out.println(bound + " - (" + a + "*" + p.getX() + b + "*" + p.getY() + ") :" + (bound - (a * p.getX() + b * p.getY())));
+		return bound - (a * p.getX() + b * p.getY()) > -accuracy;
 	}
 	
 	@Override

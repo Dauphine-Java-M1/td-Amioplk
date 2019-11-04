@@ -3,7 +3,7 @@ package fr.dauphine.ja.wormsamir.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Square extends Rectangle implements Shape, Polygon {
+public class Square extends Rectangle {
 
 	private Point upperLeftCorner;
 	private double size;

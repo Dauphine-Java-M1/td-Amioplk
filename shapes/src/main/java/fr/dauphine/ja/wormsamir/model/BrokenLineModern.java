@@ -1,20 +1,18 @@
 package fr.dauphine.ja.wormsamir.model;
 
-import java.util.LinkedList;
+import java.util.Collection;
+
+import com.google.common.collect.ImmutableList;
 
 import fr.dauphine.ja.wormsamir.view.BrokenLineDrawer;
 import fr.dauphine.ja.wormsamir.view.Drawer;
 
 public class BrokenLineModern implements Shape {
 
-	private LinkedList<Point> points;
+	private final ImmutableList<Point> points;
 	
-	public BrokenLineModern(LinkedList<Point> l) {
-		points = l;
-	}
-	
-	public void add(Point point) {
-		points.add(point);
+	public BrokenLineModern(Collection<Point> l) {
+		points = ImmutableList.copyOf(l);
 	}
 	
 	public int nbPoints() {
@@ -25,7 +23,7 @@ public class BrokenLineModern implements Shape {
 		return points.contains(point);
 	}
 	
-	public LinkedList<Point> getPoints() {
+	public ImmutableList<Point> getPoints() {
 		return points;
 	}
 

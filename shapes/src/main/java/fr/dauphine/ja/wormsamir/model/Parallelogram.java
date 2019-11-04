@@ -1,9 +1,10 @@
 package fr.dauphine.ja.wormsamir.model;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Parallelogram implements Shape, Polygon {
+public class Parallelogram extends ConvexPolygon {
 
 	protected Point upperLeftCorner;
 	private Point upperRightCorner;
@@ -15,7 +16,8 @@ public class Parallelogram implements Shape, Polygon {
 	}
 	
 	public Parallelogram(Point ur, Point ul, Point lr, Point ll) {
-	
+		super((Arrays.asList(ur, ul, lr, ll)));
+
 		upperRightCorner = ur;
 		upperLeftCorner = ul;
 		lowerRightCorner = lr;

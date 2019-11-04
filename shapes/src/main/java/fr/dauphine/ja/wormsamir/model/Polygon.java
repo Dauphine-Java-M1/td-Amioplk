@@ -8,7 +8,7 @@ import fr.dauphine.ja.wormsamir.view.PolygonDrawer;
 public interface Polygon extends Shape {
 	
 	int getDimensions();
-	// boolean isIn();
+	boolean covers(Point p);
 	Set<Line> getSides();
 	
 	@Override

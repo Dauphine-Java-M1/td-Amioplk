@@ -1,15 +1,18 @@
 package fr.dauphine.ja.wormsamir.model;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Triangle implements Shape, Polygon {
+public class Triangle extends ConvexPolygon {
 
 	private Point A;
 	private Point B;
 	private Point C;
 	
 	public Triangle(Point a, Point b, Point c) {
+		super((Arrays.asList(a, b, c)));
+
 		this.A = a;
 		this.B = b;
 		this.C = c;

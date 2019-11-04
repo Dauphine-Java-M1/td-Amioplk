@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import fr.dauphine.ja.wormsamir.model.BrokenLineModern;
 import fr.dauphine.ja.wormsamir.model.Circle;
+import fr.dauphine.ja.wormsamir.model.Line;
 import fr.dauphine.ja.wormsamir.model.Parallelogram;
 import fr.dauphine.ja.wormsamir.model.Point;
 import fr.dauphine.ja.wormsamir.model.Rectangle;
@@ -50,8 +51,11 @@ public class MyDisplay extends JPanel {
 		w.shapes.add(new Parallelogram(new Point(50, 50), new Point(50,150), new Point(250,150), new Point(250,250)));
 		w.shapes.add(new Rectangle(new Point(300,300), 75, 300));
 		Triangle t = new Triangle(new Point(100, 500), new Point(200, 400), new Point(450, 500));
+		System.out.println(t.covers(new Point(200, 450)));
 		w.shapes.add(t);
 		w.shapes.add(new Square(new Point(600, 100), 50));
+		Line line = new Line(new Point(1,1), new Point(4,9));
+		w.shapes.add(line);
 		
 		JFrame frame = new JFrame("Java Avancé - Graphic Display");
 		frame.setSize(new Dimension(1000, 1000));
