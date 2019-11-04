@@ -2,7 +2,6 @@ package fr.dauphine.ja.wormsamir.view;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.event.MouseMotionListener;
 import java.util.LinkedList;
 
 import javax.swing.JFrame;
@@ -33,6 +32,7 @@ public class MyDisplay extends JPanel {
 	@Override
 	protected void paintComponent(Graphics arg0) {
 	
+		super.paintComponent(arg0);
 		for(Shape s : world.shapes) {
 			s.getDrawer().draw(arg0);
 		}
@@ -42,23 +42,25 @@ public class MyDisplay extends JPanel {
 	public static void main(String[] args) {
 		
 		World w = new World();
-		w.shapes.add(new Point(400, 100));
+		/*w.shapes.add(new Point(400, 100));
 		w.shapes.add(new Circle(new Point(400, 100), 100));
-		/*LinkedList<Point> l = new LinkedList<>();
+		LinkedList<Point> l = new LinkedList<>();
 		l.add(new Point(0,0));
 		l.add(new Point(100,100));
 		l.add(new Point(200,300));
 		w.shapes.add(new BrokenLineModern(l));
 		w.shapes.add(new Ring(new Point(200,300), 100, 50));
+		
 		w.shapes.add(new Parallelogram(new Point(50, 50), new Point(50,150), new Point(250,150), new Point(250,250)));
+		*/
 		w.shapes.add(new Rectangle(new Point(300,300), 75, 300));
+		/*
 		Triangle t = new Triangle(new Point(100, 500), new Point(200, 400), new Point(450, 500));
-		System.out.println(t.covers(new Point(200, 450)));
 		w.shapes.add(t);
 		w.shapes.add(new Square(new Point(600, 100), 50));
 		Line line = new Line(new Point(1,1), new Point(4,9));
-		w.shapes.add(line);*/
-		
+		w.shapes.add(line);
+		*/
 		JFrame frame = new JFrame("Java Avancé - Graphic Display");
 		frame.setSize(new Dimension(1000, 1000));
 		frame.setVisible(true);

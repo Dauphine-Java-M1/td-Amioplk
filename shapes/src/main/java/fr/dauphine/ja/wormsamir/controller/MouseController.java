@@ -26,6 +26,7 @@ public class MouseController implements MouseMotionListener {
 			Shape shape = toListen.shapes.get(i);
 			if(shape.contains(new Point(e.getX(), e.getY()))) {
 				shape.translate(e.getX(), e.getY());
+				shape.getDrawer().translate(shape);
 				panel.repaint();
 				break;
 			}

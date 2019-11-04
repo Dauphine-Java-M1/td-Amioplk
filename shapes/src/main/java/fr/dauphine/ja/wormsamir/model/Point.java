@@ -1,7 +1,6 @@
 package fr.dauphine.ja.wormsamir.model;
 
 import java.util.ArrayList;
-
 import fr.dauphine.ja.wormsamir.view.Drawer;
 import fr.dauphine.ja.wormsamir.view.PointDrawer;
 
@@ -10,6 +9,7 @@ import fr.dauphine.ja.wormsamir.view.PointDrawer;
  */
 public class Point implements Shape {
 
+	private PointDrawer drawer;
 	private double x;
 	private double y;
 	private static int nbPoints = 0;
@@ -21,6 +21,7 @@ public class Point implements Shape {
 	public Point(double x, double y) {
 		this.x = x;
 		this.y = y;
+		this.drawer = new PointDrawer(this);
 		nbPoints = nbPoints + 1;
 	}
 
@@ -99,7 +100,7 @@ public class Point implements Shape {
 
 	@Override
 	public Drawer getDrawer() {
-		return new PointDrawer(this);
+		return drawer;
 	}
 
 }

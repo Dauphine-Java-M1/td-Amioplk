@@ -81,5 +81,10 @@ public class Line implements Shape {
 	public void setB(Point b) {
 		B = b;
 	}
+
+	@Override
+	public void translate(int x, int y) {
+		B.translate((int) (B.getX() - A.getX() - x), (int) (B.getY() - A.getY() - y));
+	}
 	
 }
