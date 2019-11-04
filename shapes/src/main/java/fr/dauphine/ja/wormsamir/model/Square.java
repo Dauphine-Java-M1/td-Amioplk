@@ -1,14 +1,17 @@
 package fr.dauphine.ja.wormsamir.model;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Square extends Rectangle {
+public class Square extends ConvexPolygon {
 
 	private Point upperLeftCorner;
 	private double size;
 	
 	public Square(Point p, double s) {
+		super(Arrays.asList(p, p.translate((int) s, 0), p.translate((int) s, (int) s), p.translate(0, (int) s)));
+		
 		upperLeftCorner = p;
 		size = s;		
 	}

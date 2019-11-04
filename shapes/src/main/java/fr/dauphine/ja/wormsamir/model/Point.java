@@ -50,8 +50,9 @@ public class Point implements Shape {
 		return "(" + Double.toString(getX()) + "," + Double.toString(getY()) + ")";
 	}
 	
-	public Point translate(int dx, int dy) {
-		return new Point(getX() + dx, getY() + dy);
+	public void translate(int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
 	
 	public double norm2(Point point) {

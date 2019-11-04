@@ -30,8 +30,8 @@ public class Circle implements Shape {
 		return false;
 	}
 
-	public Circle translate(int dx, int dy) {
-		return new Circle(getCenter().translate(dx, dy), getRadius());
+	public void translate(int x, int y) {
+		center.translate(x, y);
 	}
 
 	@Override

@@ -11,6 +11,7 @@ import fr.dauphine.ja.wormsamir.view.Drawer;
 public interface Shape {
 	
 	public Drawer getDrawer();
-	public abstract boolean contains(Point p);
+	public void translate(int x, int y);
+	public boolean contains(Point p);
 	
 }

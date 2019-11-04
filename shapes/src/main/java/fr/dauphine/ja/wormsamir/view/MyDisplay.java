@@ -2,11 +2,13 @@ package fr.dauphine.ja.wormsamir.view;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.MouseMotionListener;
 import java.util.LinkedList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import fr.dauphine.ja.wormsamir.controller.MouseController;
 import fr.dauphine.ja.wormsamir.model.BrokenLineModern;
 import fr.dauphine.ja.wormsamir.model.Circle;
 import fr.dauphine.ja.wormsamir.model.Line;
@@ -42,7 +44,7 @@ public class MyDisplay extends JPanel {
 		World w = new World();
 		w.shapes.add(new Point(400, 100));
 		w.shapes.add(new Circle(new Point(400, 100), 100));
-		LinkedList<Point> l = new LinkedList<>();
+		/*LinkedList<Point> l = new LinkedList<>();
 		l.add(new Point(0,0));
 		l.add(new Point(100,100));
 		l.add(new Point(200,300));
@@ -55,12 +57,15 @@ public class MyDisplay extends JPanel {
 		w.shapes.add(t);
 		w.shapes.add(new Square(new Point(600, 100), 50));
 		Line line = new Line(new Point(1,1), new Point(4,9));
-		w.shapes.add(line);
+		w.shapes.add(line);*/
 		
 		JFrame frame = new JFrame("Java Avancé - Graphic Display");
 		frame.setSize(new Dimension(1000, 1000));
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		MouseController mc = new MouseController(w);
+		frame.addMouseMotionListener(mc);
 		
 		MyDisplay d = new MyDisplay(w);
 		frame.add(d);

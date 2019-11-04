@@ -1,7 +1,7 @@
 package fr.dauphine.ja.wormsamir.model;
 
-import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class ConvexPolygon implements Polygon {
@@ -12,7 +12,7 @@ public class ConvexPolygon implements Polygon {
 		points = null;
 	}
 	
-	public ConvexPolygon(Collection<Point> points) {
+	public ConvexPolygon(List<Point> points) {
 		
 		if(points.size() <= 1) throw new IllegalArgumentException();
 		
