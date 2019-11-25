@@ -1,8 +1,6 @@
 package fr.dauphine.ja.wormsamir.model;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Rectangle extends ConvexPolygon {
 
@@ -15,7 +13,7 @@ public class Rectangle extends ConvexPolygon {
 	}
 
 	public Rectangle(Point p, double v, double h) {
-		super(Arrays.asList(p, p.translate((int) h, 0), p.translate((int) h, (int) v), p.translate(0, (int) v)));
+		super(Arrays.asList(p, new Point(p.getX() + h, p.getY()), new Point(p.getX() + h, p.getY() - v), new Point(p.getX(), p.getY() - v)));
 		
 		upperLeftCorner = p;
 		horizontalLength = h;
@@ -45,18 +43,5 @@ public class Rectangle extends ConvexPolygon {
 	public double getVerticalLength() {
 		return verticalLength;
 	}
-
-	@Override
-	public Set<Line> getSides() {
-		Set<Line> sides = new HashSet<Line>();
-		sides.add(new Line(upperLeftCorner, upperLeftCorner.translate((int) horizontalLength, 0)));
-		sides.add(new Line(upperLeftCorner, upperLeftCorner.translate(0, (int) verticalLength)));
-		sides.add(new Line(upperLeftCorner.translate(0, (int) verticalLength),
-				upperLeftCorner.translate((int) horizontalLength, (int) verticalLength)));
-		sides.add(new Line(upperLeftCorner.translate((int) horizontalLength, 0),
-				upperLeftCorner.translate((int) horizontalLength, (int) verticalLength)));
-
-		return sides;
-	}
-
+	
 }

@@ -5,6 +5,7 @@ import fr.dauphine.ja.wormsamir.view.RingDrawer;
 
 public class Ring implements Shape {
 
+	private RingDrawer drawer;
 	private Circle outsideCircle;
 	private double insideRadius;
 	
@@ -14,6 +15,7 @@ public class Ring implements Shape {
 		
 		this.outsideCircle = new Circle(c, r);
 		this.insideRadius = ri;
+		this.drawer = new RingDrawer(this);
 	}
 	
 	/**
@@ -72,7 +74,12 @@ public class Ring implements Shape {
 
 	@Override
 	public Drawer getDrawer() {
-		return new RingDrawer(this);
+		return drawer;
+	}
+
+	@Override
+	public void translate(int x, int y) {
+		outsideCircle.translate(x, y);
 	}
 	
 }

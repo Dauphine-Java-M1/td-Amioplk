@@ -1,8 +1,6 @@
 package fr.dauphine.ja.wormsamir.model;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Parallelogram extends ConvexPolygon {
 
@@ -16,7 +14,7 @@ public class Parallelogram extends ConvexPolygon {
 	}
 	
 	public Parallelogram(Point ur, Point ul, Point lr, Point ll) {
-		super((Arrays.asList(ur, ul, lr, ll)));
+		super((Arrays.asList(ul, ur, lr, ll)));
 
 		upperRightCorner = ur;
 		upperLeftCorner = ul;
@@ -43,17 +41,6 @@ public class Parallelogram extends ConvexPolygon {
 	@Override
 	public int getDimensions() {
 		return 4;
-	}
-
-	@Override
-	public Set<Line> getSides() {
-		Set<Line> sides = new HashSet<Line>();
-		sides.add(new Line(upperLeftCorner, upperRightCorner));
-		sides.add(new Line(upperLeftCorner, lowerLeftCorner));
-		sides.add(new Line(upperRightCorner, lowerRightCorner));
-		sides.add(new Line(lowerLeftCorner, lowerRightCorner));
-		
-		return sides;
 	}
 
 }

@@ -8,5 +8,8 @@ public abstract class Drawer {
 
 	Shape shapeToDraw;
 	public abstract void draw(Graphics g);
+	public void translate(Shape shape) {
+		shapeToDraw = shape;
+	}
 	
 }

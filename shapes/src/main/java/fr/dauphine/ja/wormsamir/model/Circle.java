@@ -4,17 +4,19 @@ import fr.dauphine.ja.wormsamir.view.CircleDrawer;
 import fr.dauphine.ja.wormsamir.view.Drawer;
 
 public class Circle implements Shape {
-
+	
+	private CircleDrawer drawer;
 	private Point center;
 	private double radius;
 
 	public Circle(Point c, double r) {
 		this.center = new Point(c);
 		this.radius = r;
+		this.drawer = new CircleDrawer(this);
 	}
 
 	public double surface() {
-		return Math.PI * getRadius() * getRadius();
+		return Math.PI * Math.pow(getRadius(), 2);
 	}
 
 	public boolean contains(Point point) {
@@ -50,7 +52,7 @@ public class Circle implements Shape {
 
 	@Override
 	public Drawer getDrawer() {
-		return new CircleDrawer(this);
+		return drawer;
 	}
 
 }
