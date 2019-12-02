@@ -1,15 +1,21 @@
 package fr.dauphine.ja.wormsamir.generics;
 
-import java.util.Arrays;
-import java.util.List;
-
-public class Maximums
-{
-    public static void myMax(int i0, Integer...integers)
+public class Maximums{
+	
+	
+    public static <T extends Comparable<T>> T myMax(T i0, T...args)
     {
-    	List<Integer> ints = Arrays.asList(integers);
-    	ints.add(i0);
+    
+    	T max = i0;
+    	for(T c : args) {
+    		if(c.compareTo(max) > 0) max = c;
+    	}
     	
-    	return ints.stream().max((x,y) -> Integer.compare(x, y));
+    	return max;
     }
+
+	public static void main(String[] args) {
+		System.out.println(myMax(8.6,16.64));
+		System.out.println(myMax("baa", "aba"));
+	}
 }
