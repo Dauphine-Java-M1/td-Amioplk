@@ -2,6 +2,7 @@ package fr.dauphine.ja.wormsamir.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Fusion {
@@ -26,10 +27,12 @@ public class Fusion {
 		
 		List<T> fusion = new ArrayList<T>();
 		
-		int N = Math.max(l1.size(), l2.size());
-		for(int i = 0; i < N ;++i) {
-			if(i < l1.size()) fusion.add(l1.get(i));
-			if(i < l2.size()) fusion.add(l2.get(i));
+		Iterator<? extends T> it1 = l1.iterator();
+		Iterator<? extends T> it2 = l2.iterator();
+		
+		while(it1.hasNext() || it2.hasNext()) {
+			if(it1.hasNext()) fusion.add(it1.next());
+			if(it2.hasNext()) fusion.add(it2.next());
 		}
 		
 		return fusion;
